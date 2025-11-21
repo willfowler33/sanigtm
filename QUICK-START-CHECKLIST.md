@@ -17,7 +17,6 @@
 ### 2. Configure Variables (CRITICAL)
 - [ ] Set `const - ga4 measurement id` to your GA4 ID (G-XXXXXXXXXX)
 - [ ] Set `const - meta pixel id` to your Facebook Pixel ID (numeric)
-- [ ] Set `const - server_container_url` (if using server-side tracking) or leave default
 
 ### 3. Test Before Publishing
 - [ ] Enable Preview mode in GTM
@@ -85,7 +84,6 @@ Fill these in for quick reference:
 GA4 Measurement ID: G-________________
 Facebook Pixel ID: ________________
 GTM Container ID: GTM-________________
-Server URL (if applicable): https://________________
 ```
 
 ## Contact

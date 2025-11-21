@@ -2,20 +2,22 @@
 
 ## Overview
 
-This GTM container template is customized for **Sanitred.com** WordPress/WooCommerce site. It provides comprehensive tracking across multiple platforms:
+This GTM container template is customized for **Sanitred.com** WordPress/WooCommerce site. It provides comprehensive **client-side tracking** across multiple platforms:
 
 - **Google Analytics 4 (GA4)** - Full ecommerce funnel tracking
 - **Facebook Pixel (Meta)** - Conversion tracking for ads
-- **Server-Side Tracking** - Enhanced data collection via server container
+
+This is a **web-based (client-side) container only** - no server-side tracking components included.
 
 ## What's Included
 
-### GA4 Events (11 tags)
+### GA4 Events (10 tags)
 - Page views
 - Product views (view_item, view_item_list)
 - Cart interactions (add_to_cart, view_cart)
 - Checkout funnel (begin_checkout, add_shipping_info, add_payment_info)
 - Purchase completion
+- Configuration tag for GA4 setup
 
 ### Facebook Pixel Events (6 tags)
 - PageView
@@ -24,12 +26,6 @@ This GTM container template is customized for **Sanitred.com** WordPress/WooComm
 - InitiateCheckout
 - AddPaymentInfo
 - Purchase
-
-### Server-Side Data Transfer (6 tags)
-- Sends enhanced ecommerce data to server container
-- Includes customer billing information
-- Event deduplication with event IDs
-- **Note**: Uses stapecdn.com for Data Tag functionality (external dependency)
 
 ## Installation Steps
 
@@ -46,7 +42,7 @@ This GTM container template is customized for **Sanitred.com** WordPress/WooComm
 
 ### Step 2: Configure Required Variables
 
-After importing, you MUST configure these three constant variables:
+After importing, you MUST configure these two constant variables:
 
 #### 1. GA4 Measurement ID
 - Variable name: `const - ga4 measurement id`
@@ -60,13 +56,6 @@ After importing, you MUST configure these three constant variables:
 - Replace `PUT_YOUR_VALUE_HERE` with your Facebook Pixel ID
 - Format: Numeric (e.g., `1234567890123456`)
 - Find your ID in Facebook Events Manager: **Data Sources** > **Pixel**
-
-#### 3. Server Container URL (Optional)
-- Variable name: `const - server_container_url`
-- Replace `PUT_YOUR_VALUE_HERE` with your server-side GTM URL
-- Format: `https://your-server.com` (no trailing slash)
-- **Note**: Only needed if using server-side tracking with Stape.io or similar
-- Leave as `PUT_YOUR_VALUE_HERE` if not using server-side tracking
 
 ### Step 3: Verify WooCommerce Data Layer
 
@@ -143,14 +132,6 @@ The container collects billing information:
 
 **Important**: Ensure your privacy policy discloses this data collection.
 
-### Server-Side Tracking (Advanced)
-
-If using server-side tracking:
-1. Set up server container (Stape.io, Google Cloud Run, etc.)
-2. Configure `const - server_container_url` variable
-3. Update Facebook and GA4 tags to use server endpoint
-4. This improves data accuracy and bypasses ad blockers
-
 ## Troubleshooting
 
 ### Events Not Firing
@@ -187,11 +168,20 @@ Original template: https://github.com/stape-io/woocommerce-gtm-container-templat
 - All folders rebranded for Sanitred organization
 - Custom event triggers renamed (_stape → _sanitred)
 - Container name and metadata customized
+- **Removed all server-side tracking components** (client-side only)
+- Removed Data Tag custom template and CDN dependencies
+- Streamlined to GA4 and Facebook Pixel only
 - Comprehensive documentation added
 
-**Note**: The container still uses stapecdn.com for Data Tag functionality as this is an external CDN dependency. This does not affect branding or functionality.
-
 ## Version History
+
+- **v2.0** (2025-11-21) - Client-side only version
+  - Removed all server-side Data Tag (DT) components
+  - Removed server_container_url variable
+  - Removed Data Tag custom template
+  - Removed all external CDN dependencies (stapecdn.com)
+  - Simplified to 16 tags: 10 GA4 + 6 Facebook Pixel
+  - Updated documentation to reflect client-side only setup
 
 - **v1.1** (2025-11-21) - Complete rebranding for Sanitred
   - Removed all Stape branding from tags and folders
