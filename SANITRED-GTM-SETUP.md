@@ -29,6 +29,7 @@ This GTM container template is customized for **Sanitred.com** WordPress/WooComm
 - Sends enhanced ecommerce data to server container
 - Includes customer billing information
 - Event deduplication with event IDs
+- **Note**: Uses stapecdn.com for Data Tag functionality (external dependency)
 
 ## Installation Steps
 
@@ -181,7 +182,21 @@ This template is based on the Stape.io WooCommerce GTM container template and cu
 
 Original template: https://github.com/stape-io/woocommerce-gtm-container-templates
 
+**Customizations for Sanitred:**
+- All tags rebranded from [Stape] to [Sanitred]
+- All folders rebranded for Sanitred organization
+- Custom event triggers renamed (_stape → _sanitred)
+- Container name and metadata customized
+- Comprehensive documentation added
+
+**Note**: The container still uses stapecdn.com for Data Tag functionality as this is an external CDN dependency. This does not affect branding or functionality.
+
 ## Version History
+
+- **v1.1** (2025-11-21) - Complete rebranding for Sanitred
+  - Removed all Stape branding from tags and folders
+  - Updated custom event trigger names
+  - Enhanced documentation with setup notes
 
 - **v1.0** (2025-11-21) - Initial Sanitred.com customization
   - Updated container name
