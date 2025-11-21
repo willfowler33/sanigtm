@@ -17,6 +17,7 @@
 ### 2. Configure Variables (CRITICAL)
 - [ ] Set `const - ga4 measurement id` to your GA4 ID (G-XXXXXXXXXX)
 - [ ] Set `const - meta pixel id` to your Facebook Pixel ID (numeric)
+- [ ] Leave `const - server_container_url` as is (used by paused tags, can be ignored)
 
 ### 3. Test Before Publishing
 - [ ] Enable Preview mode in GTM

@@ -7,7 +7,7 @@ This GTM container template is customized for **Sanitred.com** WordPress/WooComm
 - **Google Analytics 4 (GA4)** - Full ecommerce funnel tracking
 - **Facebook Pixel (Meta)** - Conversion tracking for ads
 
-This is a **web-based (client-side) container only** - no server-side tracking components included.
+**Note**: This container includes server-side Data Tags (DT) but they are **disabled/paused** and not configured. Only the client-side GA4 and Facebook Pixel tags are active.
 
 ## What's Included
 
@@ -56,6 +56,12 @@ After importing, you MUST configure these two constant variables:
 - Replace `PUT_YOUR_VALUE_HERE` with your Facebook Pixel ID
 - Format: Numeric (e.g., `1234567890123456`)
 - Find your ID in Facebook Events Manager: **Data Sources** > **Pixel**
+
+#### 3. Server Container URL (Optional - Can be ignored)
+- Variable name: `const - server_container_url`
+- **You can leave this as `PUT_YOUR_VALUE_HERE`**
+- This is only used by the paused server-side Data Tags
+- Since those tags are disabled, this variable is not required
 
 ### Step 3: Verify WooCommerce Data Layer
 
@@ -168,20 +174,18 @@ Original template: https://github.com/stape-io/woocommerce-gtm-container-templat
 - All folders rebranded for Sanitred organization
 - Custom event triggers renamed (_stape → _sanitred)
 - Container name and metadata customized
-- **Removed all server-side tracking components** (client-side only)
-- Removed Data Tag custom template and CDN dependencies
-- Streamlined to GA4 and Facebook Pixel only
+- **Server-side Data Tags disabled/paused** (client-side ready)
+- 16 active tags: 10 GA4 + 6 Facebook Pixel
 - Comprehensive documentation added
 
 ## Version History
 
-- **v2.0** (2025-11-21) - Client-side only version
-  - Removed all server-side Data Tag (DT) components
-  - Removed server_container_url variable
-  - Removed Data Tag custom template
-  - Removed all external CDN dependencies (stapecdn.com)
-  - Simplified to 16 tags: 10 GA4 + 6 Facebook Pixel
-  - Updated documentation to reflect client-side only setup
+- **v2.0** (2025-11-21) - Client-side ready version
+  - Disabled/paused all 6 server-side Data Tag (DT) tags
+  - Container remains structurally valid for GTM import
+  - 16 active client-side tags: 10 GA4 + 6 Facebook Pixel
+  - Only 2 required variables to configure (GA4 & Meta Pixel)
+  - Updated documentation for client-side focus
 
 - **v1.1** (2025-11-21) - Complete rebranding for Sanitred
   - Removed all Stape branding from tags and folders
